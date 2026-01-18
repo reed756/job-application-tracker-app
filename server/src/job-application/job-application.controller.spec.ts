@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { JobApplicationsController } from './job-applications.controller';
+import { JobApplicationsController } from './job-application.controller';
 
 describe('JobApplicationsController', () => {
   let controller: JobApplicationsController;
@@ -9,7 +9,9 @@ describe('JobApplicationsController', () => {
       controllers: [JobApplicationsController],
     }).compile();
 
-    controller = module.get<JobApplicationsController>(JobApplicationsController);
+    controller = module.get<JobApplicationsController>(
+      JobApplicationsController,
+    );
   });
 
   it('should be defined', () => {
